@@ -1,12 +1,12 @@
-# Report
+## Report
 
-Dataset:
-I used the Concrete Compressive Strength dataset from the UCI Machine Learning Repository. The purpose of the dataset is to predict concrete compressive strength using eight input variables. The target variable is concre compressive strength measured in MPa.
+## Dataset:
+I used the Concrete Compressive Strength dataset from the UCI Machine Learning Repository. The purpose of the dataset is to predict concrete compressive strength using eight input variables. The target variable is concrete compressive strength measured in MPa.
 
-Preprocessing:
-The original dataset contained 1030 rows. There were no missing values. I found 25 duplicate rows and removed them, so 1005 rows were left. The attributes in the dataset were numerical so categorial conversion was not needed. I split the dataset into 80% training data and 20 % test data. This produced 804 training samples and 201 test samples. I standardized the input features using Standardscaler.
+## Preprocessing:
+The original dataset contained 1030 rows. There were no missing values. I found 25 duplicate rows and removed them, so 1005 rows were left. The attributes in the dataset were numerical so categorical conversion was not needed. I split the dataset into 80% training data and 20 % test data. This produced 804 training samples and 201 test samples. I standardized the input features using Standardscaler.
 
-# Part1 Results
+## Part1 Results
 
 All parameter trials:
     learning_rate  iterations  training_mse     test_mse
@@ -52,13 +52,14 @@ Bias:
 Weights:
 [11.88809032  8.20486878  5.23872349 -3.03517177  1.93991869  1.01459774
   1.43732818  6.88467939]
+
 Answer to Part1 question:
-I am satisfied with the solution I found because I tested multiple combinations of learning rates and iteration counts and compared the training and test MSE values. The best result used a learning rate of 0.01 and 5000 iterations. This model had a training MSE of 100.0445 and a test MSE of 125.2261. The test R62 was approximately 0.5802, and the explained variance was approximately 0.5819. I also observed that the MSE improved as the model trained and then became fairly stable.
+I am satisfied with the solution I found because I tested multiple combinations of learning rates and iteration counts and compared the training and test MSE values. The best result used a learning rate of 0.01 and 5000 iterations. This model had a training MSE of 100.0445 and a test MSE of 125.2261. The test R^2 was approximately 0.5802, and the explained variance was approximately 0.5819. I also observed that the MSE improved as the model trained and then became fairly stable. However, other learning rates and iteration counts could still be tested, so this is the best solution among the combinations I tested.
 
 
 
 
-# Part2 Results
+## Part2 Results
 
 All SGDRegressor trials:
     learning_rate  iterations  training_mse    test_mse
@@ -102,42 +103,43 @@ Model Coefficients:
 [11.69818978  8.01336164  5.07278506 -3.20366631  1.91315739  0.86290013
   1.24658886  6.88005858]
 
-Answer to Part2 question:
-I am satisfied with the solution found. I tested multiple combinations of learning rates and iteration counts and compared the training and test MSE values. The best result used a learning rate of 0.0001 and 1000 iterations, witha training MSE of 100.0644 and a test MSE of 125.2265. The test R^2 was approximately 0.5819. I also compared the result with my manually implemented gradient descent model from part 1. The two models produced almost identical test MSE and R^2 values, which suggests that both models reached a very similar solution. 
+## Answer to Part2 question:
+I am satisfied with the solution found. I tested multiple combinations of learning rates and iteration counts and compared the training and test MSE values. The best result used a learning rate of 0.0001 and 1000 iterations, witha training MSE of 100.0644 and a test MSE of 125.2265. The test R^2 was approximately 0.5802, and the explained varianced was 0.5819. I also compared the result with my manually implemented gradient descent model from part 1. The two models produced almost identical test MSE and R^2 values, which suggests that both models reached a very similar solution. 
 
 
-Plots 
+## Plots 
 ## Part 1
 
 **MSE vs. Number of Iterations**
 
-(mse_vs_iterations.png)
+![Figure 1: MSE vs. Number of Iterations](mse_vs_iterations.png)
 
 **Actual vs. Predicted Concrete Strength**
 
-(actual_vs_predicted.png)
+![Figure 2: Actual vs. Predicted Concrete Strength](actual_vs_predicted.png)
 
 **Age vs. Concrete Compressive Strength**
 
-(age_vs_strength.png)
+![Figure 3: Age vs. Concrete Compressive Strength](age_vs_strength.png)
 
 ## Part 2
 
 **SGDRegressor Actual vs. Predicted Concrete Strength**
 
-(part2_actual_vs_predicted.png)
+![Figure 4: SGDRegressor Actual vs. Predicted Concrete Strength](part2_actual_vs_predicted.png)
 
 **Age vs. Concrete Compressive Strength for Part 2**
 
-(part2_age_vs_strength.png)
+![Figure 5: Age vs. Concrete Compressive Strength for Part 2](part2_age_vs_strength.png)
 
 **SGDRegressor Model Coefficients**
 
-(part2_coefficients.png)
+![Figure 6: SGDRegressor Model Coefficients](part2_coefficients.png)
 
+## Part 1 and Part 2 Comparison:
+The results from both models were almost identical. My gradient descent implementation had a test MSE of 125.2261, while SGDRegressor had a test MSE of 125.2265. Both models also had an R² of approximately 0.5802.
 
-
-#References
+## References
 UCI Machine Learning Repository. Concrete Compressive Strength Dataset
 
 Scikit-learn Documentation. SGDRegressor
