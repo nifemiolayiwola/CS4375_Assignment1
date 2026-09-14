@@ -4,7 +4,7 @@
 I used the Concrete Compressive Strength dataset from the UCI Machine Learning Repository. The purpose of the dataset is to predict concrete compressive strength using eight input variables. The target variable is concrete compressive strength measured in MPa.
 
 ## Preprocessing:
-The original dataset contained 1030 rows. There were no missing values. I found 25 duplicate rows and removed them, so 1005 rows were left. The attributes in the dataset were numerical so categorical conversion was not needed. I split the dataset into 80% training data and 20 % test data. This produced 804 training samples and 201 test samples. I standardized the input features using Standardscaler.
+The original dataset contained 1030 rows. There were no missing values. I found 25 duplicate rows and removed them, so 1005 rows were left. The attributes in the dataset were numerical so categorical conversion was not needed. I split the dataset into 80% training data and 20 % test data. This produced 804 training samples and 201 test samples. I standardized the input features using StandardScaler.
 
 ## Part1 Results
 
@@ -36,7 +36,7 @@ learning_rate       0.010000
 iterations       5000.000000
 training_mse      100.044470
 test_mse          125.226144
-Name: 15, dtype: float64
+
 
 FINAL RESULTS
 ----------------------------
@@ -85,7 +85,7 @@ learning_rate       0.000100
 iterations       1000.000000
 training_mse      100.064371
 test_mse          125.226495
-Name: 1, dtype: float64
+
 
 FINAL RESULTS
 ----------------------------
@@ -104,7 +104,7 @@ Model Coefficients:
   1.24658886  6.88005858]
 
 ## Answer to Part2 question:
-I am satisfied with the solution found. I tested multiple combinations of learning rates and iteration counts and compared the training and test MSE values. The best result used a learning rate of 0.0001 and 1000 iterations, witha training MSE of 100.0644 and a test MSE of 125.2265. The test R^2 was approximately 0.5802, and the explained varianced was 0.5819. I also compared the result with my manually implemented gradient descent model from part 1. The two models produced almost identical test MSE and R^2 values, which suggests that both models reached a very similar solution. 
+I am satisfied with the solution found. I tested multiple combinations of learning rates and iteration counts and compared the training and test MSE values. The best result used a learning rate of 0.0001 and 1000 iterations, with a training MSE of 100.0644 and a test MSE of 125.2265. The test R^2 was approximately 0.5802, and the explained varianced was approximately 0.5819. I also compared the result with my manually implemented gradient descent model from part 1. The two models produced almost identical test MSE and R^2 values, which suggests that both models reached a very similar solution. 
 
 
 ## Plots 
@@ -137,7 +137,7 @@ I am satisfied with the solution found. I tested multiple combinations of learni
 ![Figure 6: SGDRegressor Model Coefficients](part2_coefficients.png)
 
 ## Part 1 and Part 2 Comparison:
-The results from both models were almost identical. My gradient descent implementation had a test MSE of 125.2261, while SGDRegressor had a test MSE of 125.2265. Both models also had an R² of approximately 0.5802.
+The results from both models were almost identical. My gradient descent implementation had a test MSE of 125.2261, while SGDRegressor had a test MSE of 125.2265. Both models also had an R² of approximately 0.5802. This shows that my manually implemented gradient descent model produced results very similar to Scikit-learn's SGDRegressor.
 
 ## References
 UCI Machine Learning Repository. Concrete Compressive Strength Dataset
