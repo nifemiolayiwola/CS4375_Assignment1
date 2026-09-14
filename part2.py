@@ -211,7 +211,7 @@ test_explained_variance = explained_variance_score(
 )
 
 
-print("\nFINAL PART 2 RESULTS")
+print("\nFINAL RESULTS")
 print("----------------------------")
 
 print(
@@ -243,12 +243,11 @@ print(
     "Explained Variance:",
     test_explained_variance
 )
+print("\nModel Intercept:")
+print(best_model.intercept_)
 
 print("\nModel Coefficients:")
 print(best_model.coef_)
-
-print("\nModel Intercept:")
-print(best_model.intercept_)
 
 
 # Actual vs Predicted Plot

@@ -282,7 +282,7 @@ final_explained_variance = (
     )
 )
 
-print("\nFINAL MODEL RESULTS")
+print("\nFINAL RESULTS")
 print("----------------------------")
 
 print(
@@ -310,11 +310,13 @@ print(
     final_explained_variance
 )
 
+print("\nBias:")
+print(best_model.bias)
+
 print("\nWeights:")
 print(best_model.weights)
 
-print("\nBias:")
-print(best_model.bias)
+
 
 
 #  MSE vs Iterations Plot
